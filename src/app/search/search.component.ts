@@ -30,6 +30,7 @@ export class SearchComponent implements OnInit {
 
 
   }
+  // Data searching functionality
   public model: any;
 
 
@@ -43,9 +44,7 @@ export class SearchComponent implements OnInit {
 
         : this.states.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
     )
-getData(){
-  console.log(Data)
-}
+
 
 }
 
