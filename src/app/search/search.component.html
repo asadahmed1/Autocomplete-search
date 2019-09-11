@@ -1,16 +1,14 @@
+
 <div class="md-form">
-  <input class="form-control"
+  <!-- Input field -->
+  <input class="form-control w-50"
     type="text"
     class="completer-input form-control mdb-autocomplete"
     [ngModel]="searchText | async"
     (ngModelChange)="searchText.next($event)"
     [matAutocomplete]="auto"
-    (keyup)="onkeypress($event)"
-
   />
-  <!-- <select name="" id="">
-    <option value="fa">fa</option>
-  </select> -->
+  <!-- auto complete the result -->
   <mat-autocomplete #auto='matAutocomplete' textNoResults="I have found no results :(">
     <mat-option  *ngFor="let option of results | async" [value]="option">
       {{ option }}
@@ -18,4 +16,4 @@
   </mat-autocomplete>
 </div>
 
-<!-- <input type="text" (keyup)="filters($event)"> -->
+
