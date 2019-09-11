@@ -1,19 +1,12 @@
 
-<div class="md-form">
-  <!-- Input field -->
-  <input class="form-control w-50"
-    type="text"
-    class="completer-input form-control mdb-autocomplete"
-    [ngModel]="searchText | async"
-    (ngModelChange)="searchText.next($event)"
-    [matAutocomplete]="auto"
-  />
-  <!-- auto complete the result -->
-  <mat-autocomplete #auto='matAutocomplete' textNoResults="I have found no results :(">
-    <mat-option  *ngFor="let option of results | async" [value]="option">
-      {{ option }}
-    </mat-option>
-  </mat-autocomplete>
-</div>
+<!--The content below is only a placeholder and can be replaced.-->
 
+<div class="container pt-5">
+<label for="typeahead-format">Search for a state:</label>
+<div class="align-center">
+<input id="typeahead-format" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" [resultFormatter]="formatter" />
+</div>
+<hr>
+<pre>Selected State: {{ model | json }}</pre>
+</div>
 
